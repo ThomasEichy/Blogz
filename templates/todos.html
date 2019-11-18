@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Get It Done!</h1>
+    <form method='post'>
+        <label>
+            Write New Blog:
+            <input type="text" name='blog' />
+        </label>
+        <input type="submit" value='Add Blog' />
+    </form>
+
+    <hr />
+
+    <h2>Blog List</h2>
+
+    <ul>
+        {% for blog in completed_blogs %}
+        <li>{{blog.name}}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
