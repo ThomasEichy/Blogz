@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form action="sign-in" method="post">
+<label>
+    Username
+    <input type="text" name="user-id" value="{{ name_mem }}"/>
+</label>
+<br>
+{% if blank_error1 %}
+  <p class='error1'>{{ error1 }}</p>
+{% endif %}
+
+{% if error4 %}
+  <p class='error4'>{{ error4 }}</p>
+{% endif %}
+
+
+<label>
+    Password
+    <input type="text" name="password"/>
+</label>
+<br>
+{% if error2 %}
+  <p class='error2'>{{ error2 }}</p>
+{% endif %}
+
+{% if error5 %}
+  <p class='error5'>{{ error5 }}</p>
+{% endif %}
+
+{% if error_account %}
+  <p class='error_account'>{{ error_account }}</p>
+{% endif %}
+
+<label>
+    Verify Password
+    <input type="text" name="pass-check"/>
+</label>
+<br>
+{% if error3 %}
+  <p class='error3'>{{ error3 }}</p>
+{% endif %}
+
+{% if error6 %}
+  <p class='error6'>{{ error6 }}</p>
+{% endif %}
+
+<input type="submit" value="Submit"/>
+
+</form>
+
+{% if error %}
+  <p class='error'>{{ error }}</p>
+{% endif %}
+
+
+{% endblock %}

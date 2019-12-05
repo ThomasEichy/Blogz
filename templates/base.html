@@ -4,10 +4,22 @@
         <title>{{title}}</title>
     </head>
 <body>
-        <nav>
-            <a href="/">Blogs List</a> | 
-            <a href="/new-blog">Post a new Blog</a>
-        </nav>
+        {% if signedin == True %}
+            <nav>
+                <a href="/?username={{username}}">Home</a> |
+                <a href="/blogs?username={{username}}">Blogs List</a> | 
+                <a href="/new-blog?username={{username}}">Post a new Blog</a>
+                <a href="/logout" align="right">Log Out</a>
+            </nav>
+        {% endif %}
+
+        {% if signedin == False %}
+            <nav>
+                <a href="/">Home</a> |
+                <a href="/sign-in">Sign In</a> | 
+                <a href="/sign-up">Sign Up</a>
+            </nav>
+        {% endif %}
 
     {% block content %}
     {% endblock %}

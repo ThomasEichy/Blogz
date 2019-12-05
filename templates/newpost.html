@@ -3,10 +3,11 @@
 {% block content %}
 
 <h1>New Blog</h1>
-<form method='post' action='new-blog'>
+<form action='new-blog' method='post'>
     <label>
         Blog Title: <br>
         <input type="text" name="blog-title" value={{titlearea}}><br>
+        <input type="hidden" name="username" value={{username}}><br>
     </label>
     <P>{{error1}}</P>
     <label>

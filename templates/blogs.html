@@ -6,8 +6,9 @@
 
     <ul>
         {% for blog in completed_blogs %}
-        <h3><a href="/blogpost?id={{blog.id}}">{{blog.blog_title}}</a></h3>
-        <p>{{blog.name}}</p>
+        <h3><a href="/singleUser?user={{blog.user.username}}&username={{username}}">{{blog.user.username}}</a></h3>
+        <h3><a href="/blogpost?user={{blog.user.username}}&id={{blog.blog_id}}&username={{username}}">{{blog.blog_title}}</a></h3>
+        <p>{{blog.body}}</p>
         <hr>
         {% endfor %}
     </ul>
